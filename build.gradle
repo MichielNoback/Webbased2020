@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'idea'
+}
+
+group 'nl.bioinf.nomi.wis'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //Servlets
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    //Thymeleaf
+    implementation 'org.thymeleaf:thymeleaf:3.0.11.RELEASE'
+    //JUnit5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    //to get rid of the error messages:
+    //SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+    //SLF4J: Defaulting to no-operation (NOP) logger implementation
+    //SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+    implementation "org.slf4j:slf4j-simple:1.7.9"
+}
+
+test {
+    useJUnitPlatform()
+}
